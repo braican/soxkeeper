@@ -1,0 +1,76 @@
+body{
+	font-family: 'Lato', sans-serif;
+}
+
+/* General
+---------------------------------- */
+
+.link{
+	text-decoration: none;
+	color:#4DBD33;
+	-webkit-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	transition: all .2s linear;
+	padding: 4px;
+}
+.link:hover{
+	background-color: #4DBD33;
+	color: #fff;
+	-webkit-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	transition: all .2s linear;
+}
+
+form{
+	margin-top:10px;
+}
+
+.container{
+	max-width:800px;
+	width: 96%;
+	margin:0 auto;
+}
+
+.success-text,
+.success-payed-text{
+	opacity: 0;
+}
+
+input[type=text]{
+	padding: 8px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	background-color: #efefef;
+	font-size: 14px;
+	margin: 0;
+	height: 36px;
+}
+input[type=submit]{
+	background-color: #aaa;
+	border: 0;
+	height: 36px;
+	margin: 0;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	font-size: 16px;
+	color:#fff;
+	cursor: pointer;
+
+	-webkit-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	transition: all .2s linear;
+}
+input[type=submit]:hover{
+	background-color: #919191;
+
+	-webkit-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	transition: all .2s linear;
+}
