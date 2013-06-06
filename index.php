@@ -11,24 +11,24 @@
 <div class="container">
 	
 	<h1>SoxKeeper</h1>
-	<div class="project-list">
-		
+	<div class="game-list">
+		<?php include("util/game-list.php"); ?>
 	</div>
 
-		<form action="util/add_game.php" method="post">
-			<input type="date" name="sox_date" value="2011-09-26"></input>
+		<form action="util/add-game.php" method="post">
+			<input type="date" name="sox_date" value="2013-09-26"></input>
 			<fieldset>
-				<label for="sox_home">Home</label><input type="radio" name="home_away" value="home" id="sox_home">
-				<label for="sox_away">Away</label><input type="radio" name="home_away" value="away" id="sox_away">
+				<label for="sox_home">Home</label><input type="radio" name="home_away" value="1" id="sox_home">
+				<label for="sox_away">Away</label><input type="radio" name="home_away" value="0" id="sox_away">
 			</fieldset>
 			<input type="text" name="sox_opponent" placeholder="opponenet">
 			<fieldset>
-				<label for="sox_win">Win</label><input type="radio" name="win_loss" value="win" id="sox_home">
-				<label for="sox_loss">Loss</label><input type="radio" name="win_loss" value="loss" id="sox_loss">
+				<label for="sox_win">Win</label><input type="radio" name="win_loss" value="1" id="sox_home">
+				<label for="sox_loss">Loss</label><input type="radio" name="win_loss" value="0" id="sox_loss">
 			</fieldset>
 			<input type="text" name="sox_score" placeholder="score">
 			<input type="text" name="sox_pitcher" placeholder="Red Sox pitcher">
-			<input type="text" name="sox_opponent_pitcher" placeholder="opponent pitcher">
+			<input type="text" name="sox_opposing_pitcher" placeholder="opposing pitcher">
 			<input type="submit" value="Submit"></input>
 		</form>
 
@@ -48,12 +48,13 @@
 	            $(".success-text").empty().html(data).animate({opacity:1});
 	            setTimeout(function(){
 	            	$(".success-text").animate({opacity:0});
-	            }, 5000);
-	            $(".project-list").load("util/project-list.php");
+	            }, 10000);
+	            $(".game-list").load("util/game-list.php");
 	        }
 	    });
 
 		$('form input[type=text]').val('');
+
 	});
 </script>
 
