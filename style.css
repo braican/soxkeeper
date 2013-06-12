@@ -2,6 +2,13 @@ body{
 	font-family: 'Lato', sans-serif;
 }
 
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	vertical-align: top;
+}
+
 /* General
 ---------------------------------- */
 
@@ -24,7 +31,7 @@ body{
 }
 
 form{
-	margin-top:10px;
+	margin-top:40px;
 }
 
 .container{
@@ -38,6 +45,10 @@ form{
 	opacity: 0;
 }
 
+input{
+	margin: 0 10px 10px 0;
+}
+
 input[type=text]{
 	padding: 8px;
 	-webkit-border-radius: 5px;
@@ -46,9 +57,19 @@ input[type=text]{
 	border: 1px solid #ccc;
 	background-color: #efefef;
 	font-size: 14px;
-	margin: 0;
 	height: 36px;
 }
+input[type=date]{
+	padding: 8px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	background-color: #efefef;
+	font-size: 14px;
+	height: 36px;
+}
+
 input[type=submit]{
 	background-color: #aaa;
 	border: 0;
@@ -74,3 +95,81 @@ input[type=submit]:hover{
 	-moz-transition: all .2s linear;
 	transition: all .2s linear;
 }
+
+/* game list styling
+---------------------------------- */
+.row div{
+	float: left;
+}
+.row .date{
+	width: 12%;
+}
+.row .home-away{
+	width: 8%;
+}
+.row .opponent{
+	width: 30%;
+}
+.row .win-loss{
+	width: 5%;
+}
+.row .score{
+	width: 5%;
+}
+.row .sox-pitcher{
+	width: 20%;
+}
+.row .opposing-pitcher{
+	width: 20%;
+}
+
+
+/* add game form
+---------------------------------- */
+fieldset{
+	border: 0;
+	position: relative;
+	padding: 0;
+	margin: 0 10px 10px 0;
+	display: inline;
+}
+
+label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    font-size: 16px;
+    padding: 8px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    width: 40px;
+    height: 36px;
+    text-align: center;
+}
+input[type=radio] {  
+    display: none;  
+}
+
+input[type=radio]:nth-of-type(1):checked + label {
+    background-color: #002c5d;
+    color: #fff;
+}
+input[type=radio]:nth-of-type(2):checked + label {
+    background-color: #c02f35;
+    color: #fff;
+}
+
+
+
+/* util
+---------------------------------- */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */

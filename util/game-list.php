@@ -18,7 +18,7 @@
 		$opposing_pitcher = $row['opposing_pitcher'];
 		
 ?>
-	<div class="row">
+	<div class="row clearfix">
 		<div class="date"><?php echo $date; ?></div>
 		<div class="home-away"><?php echo $home_away; ?></div>
 		<div class="opponent"><?php echo $opponent; ?></div>
