@@ -2,6 +2,24 @@
 
 	require_once("db_util.php");
 	$db = dbconnect();
+
+	// create the table
+	$create_table_sql =	'CREATE TABLE IF NOT EXISTS `games`(
+							`game_id` bigint(20) NOT NULL AUTO_INCREMENT,
+							`date` date NOT NULL,
+							`home_away` tinyint(1) NOT NULL,
+							`opponent` text NOT NULL,
+							`win_loss` tinyint(1) NOT NULL,
+							`score` text NOT NULL,
+							`sox_pitcher` text,
+							`opposing_pitcher` text,
+							`game_notes` text,
+							PRIMARY KEY (`game_id`)
+						)';
+	if(!$result = $db->query($create_table_sql)){
+		die('There was an error running the add table query in game-list [' . $db->error . ']');
+	}
+
 	
 	$sql = "SELECT * FROM `games`";
 	if(!$result = $db->query($sql)){

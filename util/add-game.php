@@ -9,30 +9,41 @@
 	$sox_pitcher = $_POST['sox_pitcher'];
 	$sox_opposing_pitcher = $_POST['sox_opposing_pitcher'];
 
+	$game_notes = $_POST['game_notes'];
+
 	//connect to database
 	$db = dbconnect();
 
-	// 	//clean up the input for mysql
-	//  	$new_project = $db->real_escape_string($new_project);
 
-	//  	// check if the potential project exists in the database
-	//  	$sql = "SELECT COUNT( * ) FROM  `projects` WHERE  `project` =  '" . $new_project . "'";
-	//  	//$sql = "SELECT * FROM  `projects`";
-	//  	$result = $db->query($sql);
-	// 	$row = $result->fetch_row();
-	// 	if($row[0] > 0){
-	// 		die('no dice, already a project with that name');
-	// 	}
+	// create the table
+	$create_table_sql =	'CREATE TABLE IF NOT EXISTS `games`(
+							`game_id` bigint(20) NOT NULL AUTO_INCREMENT,
+							`date` date NOT NULL,
+							`home_away` tinyint(1) NOT NULL,
+							`opponent` text NOT NULL,
+							`win_loss` tinyint(1) NOT NULL,
+							`score` text NOT NULL,
+							`sox_pitcher` text,
+							`opposing_pitcher`, text,
+							`game_notes`, text,
+							PRIMARY KEY (`game_id`)
+						)';
+	if(!$result = $db->query($create_table_sql)){
+		die('There was an error running the add table query [' . $db->error . ']');
+	}
 
 	//add the game to the games database
-	$sql =	"INSERT INTO `games`(`date`, `home_away` , `opponent`, `win_loss`, `score`, `sox_pitcher`, `opposing_pitcher`) VALUES ('" .
+	$sql =	"INSERT INTO `games`(`date`, `home_away` , `opponent`, `win_loss`, `score`, `sox_pitcher`, `opposing_pitcher`, `game_notes`) VALUES ('" .
+
 		$sox_date . "', '" .
 		$sox_home_away . "', '" .
 		$sox_opponent . "', '" .
 		$sox_win_loss . "', '" .
 		$sox_score . "', '" .
 		$sox_pitcher . "', '" .
-		$sox_opposing_pitcher .
+		$sox_opposing_pitcher . "', '" .
+		$game_notes .
+
 		"')";
 
 	//echo $sql;
