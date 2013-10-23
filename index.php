@@ -21,7 +21,7 @@
 				<input type="radio" name="home_away" value="1" id="sox_home"><label for="sox_home">H</label>
 				<input type="radio" name="home_away" value="0" id="sox_away"><label for="sox_away">A</label>
 			</fieldset>
-			<input type="text" name="sox_opponent" placeholder="opponenet"><br>
+			<input type="text" name="sox_opponent" placeholder="opponet"><br>
 
 			<fieldset>
 				<input type="radio" name="win_loss" value="1" id="sox_win"><label for="sox_win">W</label>
@@ -31,6 +31,8 @@
 			
 			<input type="text" name="sox_pitcher" placeholder="Red Sox pitcher">
 			<input type="text" name="sox_opposing_pitcher" placeholder="opposing pitcher"><br>
+
+			<textarea name="game_notes" id="" cols="30" rows="10"></textarea>
 			<input type="submit" value="Submit"></input>
 		</form>
 
