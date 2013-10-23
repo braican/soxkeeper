@@ -21,7 +21,9 @@
 				<input type="radio" name="home_away" value="1" id="sox_home"><label for="sox_home">H</label>
 				<input type="radio" name="home_away" value="0" id="sox_away"><label for="sox_away">A</label>
 			</fieldset>
-			<input type="text" name="sox_opponent" placeholder="opponet"><br>
+
+			<input type="text" name="sox_opponent" placeholder="opponent"><br>
+
 
 			<fieldset>
 				<input type="radio" name="win_loss" value="1" id="sox_win"><label for="sox_win">W</label>

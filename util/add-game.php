@@ -8,10 +8,12 @@
 	$sox_score = $_POST['sox_score'];
 	$sox_pitcher = $_POST['sox_pitcher'];
 	$sox_opposing_pitcher = $_POST['sox_opposing_pitcher'];
+
 	$game_notes = $_POST['game_notes'];
 
 	//connect to database
 	$db = dbconnect();
+
 
 	// create the table
 	$create_table_sql =	'CREATE TABLE IF NOT EXISTS `games`(
@@ -32,6 +34,7 @@
 
 	//add the game to the games database
 	$sql =	"INSERT INTO `games`(`date`, `home_away` , `opponent`, `win_loss`, `score`, `sox_pitcher`, `opposing_pitcher`, `game_notes`) VALUES ('" .
+
 		$sox_date . "', '" .
 		$sox_home_away . "', '" .
 		$sox_opponent . "', '" .
@@ -40,6 +43,7 @@
 		$sox_pitcher . "', '" .
 		$sox_opposing_pitcher . "', '" .
 		$game_notes .
+
 		"')";
 
 	//echo $sql;

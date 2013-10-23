@@ -19,6 +19,7 @@
 	if(!$result = $db->query($create_table_sql)){
 		die('There was an error running the add table query in game-list [' . $db->error . ']');
 	}
+
 	
 	$sql = "SELECT * FROM `games`";
 	if(!$result = $db->query($sql)){
