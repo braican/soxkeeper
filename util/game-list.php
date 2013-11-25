@@ -34,6 +34,7 @@
 		$score = $row['score'];
 		$sox_pitcher = $row['sox_pitcher'];
 		$opposing_pitcher = $row['opposing_pitcher'];
+		$notes = $row['game_notes'];
 		
 ?>
 	<div class="row clearfix">
@@ -44,6 +45,7 @@
 		<div class="score"><?php echo $score; ?></div>
 		<div class="sox-pitcher"><?php echo $sox_pitcher; ?></div>
 		<div class="opposing-pitcher"><?php echo $opposing_pitcher; ?></div>
+		<div class="notes"><?php echo $notes; ?></div>
 	</div>
 	
 

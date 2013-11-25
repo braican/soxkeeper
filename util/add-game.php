@@ -24,8 +24,8 @@
 							`win_loss` tinyint(1) NOT NULL,
 							`score` text NOT NULL,
 							`sox_pitcher` text,
-							`opposing_pitcher`, text,
-							`game_notes`, text,
+							`opposing_pitcher` text,
+							`game_notes` text,
 							PRIMARY KEY (`game_id`)
 						)';
 	if(!$result = $db->query($create_table_sql)){

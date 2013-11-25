@@ -1,6 +1,9 @@
 <html>
 <head>
 	<title>SoxKeeper</title>
+	
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="style.css">
@@ -21,8 +24,41 @@
 				<input type="radio" name="home_away" value="1" id="sox_home"><label for="sox_home">H</label>
 				<input type="radio" name="home_away" value="0" id="sox_away"><label for="sox_away">A</label>
 			</fieldset>
-
-			<input type="text" name="sox_opponent" placeholder="opponent"><br>
+			
+			<select name="sox_opponent" id="opponent" data-placeholder="opponent">
+				<option value=""></option>
+				<option value="Arizona Diamondbacks">Arizona Diamondbacks</option>
+				<option value="Atlanta Braves">Atlanta Braves</option>
+				<option value="Baltimore Orioles">Baltimore Orioles</option>
+				<option value="Chicago Cubs">Chicago Cubs</option>
+				<option value="Chicago White Sox">Chicago White Sox</option>
+				<option value="Cincinnati Reds">Cincinnati Reds</option>
+				<option value="Cleveland Indians">Cleveland Indians</option>
+				<option value="Colorado Rockies">Colorado Rockies</option>
+				<option value="Detroit Tigers">Detroit Tigers</option>
+				<option value="Houston Astros">Houston Astros</option>
+				<option value="Kansas City Royals">Kansas City Royals</option>
+				<option value="Los Angeles Angels of Anaheim">Los Angeles Angels of Anaheim</option>
+				<option value="Los Angeles Dodgers">Los Angeles Dodgers</option>
+				<option value="Miami Marlins">Miami Marlins</option>
+				<option value="Milwaukee Brewers">Milwaukee Brewers</option>
+				<option value="Minnesota Twins">Minnesota Twins</option>
+				<option value="New York Mets">New York Mets</option>
+				<option value="New York Yankees">New York Yankees</option>
+				<option value="Oakland Athletics">Oakland Athletics</option>
+				<option value="Philadelphia Phillies">Philadelphia Phillies</option>
+				<option value="Pittsburgh Pirates">Pittsburgh Pirates</option>
+				<option value="San Diego Padres">San Diego Padres</option>
+				<option value="San Francisco Giants">San Francisco Giants</option>
+				<option value="Seattle Mariners">Seattle Mariners</option>
+				<option value="St. Louis Cardinals">St. Louis Cardinals</option>
+				<option value="Tampa Bay Rays">Tampa Bay Rays</option>
+				<option value="Texas Rangers">Texas Rangers</option>
+				<option value="Toronto Blue Jays">Toronto Blue Jays</option>
+				<option value="Washington Nationals">Washington Nationals</option>
+					
+			</select>
+			<!-- <input type="text" name="sox_opponent" placeholder="opponent"><br> -->
 
 
 			<fieldset>
@@ -42,30 +78,8 @@
 </div>
 
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript">
-	
-	$('form').on('submit', function(e){
-	    e.preventDefault();
-	    $.ajax({
-	        type     : "POST",
-	        cache    : false,
-	        url      : $(this).attr('action'),
-	        data	 : $(this).serialize(),
-	        success  : function(data) {
-	        	console.log(data);
-
-	            $(".success-text").empty().html(data).animate({opacity:1});
-	            setTimeout(function(){
-	            	$(".success-text").animate({opacity:0});
-	            }, 10000);
-	            $(".game-list").load("util/game-list.php");
-	        }
-	    });
-
-		$('form input[type=text]').val('');
-
-	});
-</script>
+<script src="js/chosen.jquery.min.js"></script>
+<script src="js/soxkeeper.js"></script>
 
 </body>
 </html>
